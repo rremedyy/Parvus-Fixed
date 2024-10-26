@@ -39,7 +39,6 @@ local YellowColor = ColorNew(1, 1, 0)
 local WhiteColor = ColorNew(1, 1, 1)
 local BlackColor = ColorNew(0, 0, 0)
 local LerpColor = BlackColor.Lerp
-local Fonts = Drawing.Fonts
 
 local DrawingLibrary = {
     ESP = {},--setmetatable({}, { __mode = "kv" }),
@@ -1177,7 +1176,7 @@ function DrawingLibrary.AddObject(Self, Object, ObjectName, ObjectPosition, Glob
         Flag = Flag, GlobalFlag = GlobalFlag, Flags = Flags,
         IsBasePart = typeof(ObjectPosition) ~= "Vector3",
 
-        Name = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = Fonts.Plex })
+        Name = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = 1 })
     }
 
     if Self.ObjectESP[Object].IsBasePart then
@@ -1246,10 +1245,10 @@ function DrawingLibrary.AddESP(Self, Target, Mode, Flag, Flags)
                 Outline = AddDrawing("Triangle", { Visible = false, ZIndex = 0 }),
             },
             Textboxes = {
-                Name = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = Fonts.Plex }),
-                Distance = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = Fonts.Plex }),
-                Health = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = false, Outline = true, Color = WhiteColor, Font = Fonts.Plex }),
-                Weapon = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = false, Outline = true, Color = WhiteColor, Font = Fonts.Plex })
+                Name = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = 1 }),
+                Distance = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = true, Outline = true, Color = WhiteColor, Font = 1 }),
+                Health = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = false, Outline = true, Color = WhiteColor, Font = 1 }),
+                Weapon = AddDrawing("Text", { Visible = false, ZIndex = 0, Center = false, Outline = true, Color = WhiteColor, Font = 1 })
             },
             --Test = AddDrawing("Square", { Visible = true, ZIndex = -1, Filled = true })
         }
