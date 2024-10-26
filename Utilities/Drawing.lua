@@ -1,3 +1,7 @@
+-- Drawing Fix
+if (not Drawing) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/rremedyy/rremedyy/refs/heads/main/drawing.lua"))()
+end
 local UserInputService = game:GetService("UserInputService")
 local InsertService = game:GetService("InsertService")
 local RunService = game:GetService("RunService")
