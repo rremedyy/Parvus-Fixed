@@ -21,12 +21,12 @@ local PlayerService = game:GetService("Players")
 repeat task.wait() until PlayerService.LocalPlayer
 local LocalPlayer = PlayerService.LocalPlayer
 
-local Branch, NotificationTime, IsLocal = ...
+local Branch, NotificationTime, IsLocal = 'refs/heads/main',tick()
 --local ClearTeleportQueue = clear_teleport_queue
 local QueueOnTeleport = queue_on_teleport
 
 local function GetFile(File)
-    return IsLocal and readfile("Parvus/" .. File)
+    return IsLocal and readfile("Parvus-Fixed/" .. File)
     or game:HttpGet(("%s%s"):format(Parvus.Source, File))
 end
 
@@ -45,7 +45,7 @@ local function GetGameInfo()
 end
 
 getgenv().Parvus = {
-    Source = "https://raw.githubusercontent.com/AlexR32/Parvus/" .. Branch .. "/",
+    Source = "https://raw.githubusercontent.com/rremedyy/Parvus-Fixed/" .. Branch .. "/",
 
     Games = {
         ["Universal" ] = { Name = "Universal",                  Script = "Universal"  },
